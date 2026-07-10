@@ -2,7 +2,7 @@ const projects = [
   { 
     title: 'Startup Brand Identity', 
     tag: 'Branding', 
-    img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', 
+    img: 'assets/img/Projects/Post-Mahhon-Cover.jpg', 
     link: 'https://armvnhs.ir/' 
   },
   { 
