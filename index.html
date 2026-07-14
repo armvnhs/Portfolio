@@ -69,15 +69,16 @@
     z-index: 9999;
     transform: translate(-50%, -50%);
     opacity: 0;
+    mix-blend-mode: difference; /* اضافه شده برای دیده شدن روی پس زمینه تیره */
   }
   .cursor-dot {
     width: 6px; height: 6px;
-    background: var(--ink);
+    background: #fff; /* تغییر به سفید */
     transition: opacity .2s ease;
   }
   .cursor-ring {
     width: 34px; height: 34px;
-    border: 1.5px solid rgba(17,18,20,.8);
+    border: 1.5px solid rgba(255,255,255,.8); /* تغییر به سفید */
     background: transparent;
     transition: width .3s var(--ease), height .3s var(--ease),
                 background-color .3s var(--ease), border-color .3s var(--ease),
@@ -85,8 +86,8 @@
   }
   .cursor-ring.hover {
     width: 62px; height: 62px;
-    background: rgba(17,18,20,.06);
-    border-color: rgba(17,18,20,.35);
+    background: rgba(255,255,255,.15); /* تغییر به سفید */
+    border-color: rgba(255,255,255,.5); /* تغییر به سفید */
   }
   .cursor-ring.click { width: 28px; height: 28px; }
   body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button {
