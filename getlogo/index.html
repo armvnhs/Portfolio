@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سفارش لوگو — آرمان حق‌شناس</title>
+<meta name="description" content="درخواست طراحی لوگو از آرمان حق‌شناس — جزئیات برندت رو وارد کن و قیمت بگیر.">
+
+<link rel="icon" type="image/jpeg" href="../assets/img/Icon.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/estedad-font@v4.0.1/dist/font-face.css" rel="stylesheet" type="text/css">
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #111214;
+    --ink-soft: #6B6E76;
+    --ink-faint: #AFB2BA;
+    --line: rgba(17,18,20,.12);
+    --accent: #000000;
+    --radius: 12px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: 'Estedad', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Estedad', sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  i { font-size: 16px; line-height: 1; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 6vw; }
+
+  .topbar {
+    padding: 26px 6vw;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 760px; margin: 0 auto;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13.5px; font-weight: 700; color: var(--ink-soft);
+    transition: color .2s;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .back-link:hover { color: var(--ink); }
+  }
+  .back-link i { font-size: 13px; transform: scaleX(-1); }
+
+  .page-head { padding: 30px 0 50px; }
+  .eyebrow {
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 24px; height: 1.5px; background: var(--accent); }
+  .page-head h1 {
+    font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -.5px; line-height: 1.3;
+  }
+  .page-head p {
+    margin-top: 16px; font-size: 15.5px; color: var(--ink-soft); max-width: 520px; font-weight: 500;
+  }
+
+  form { padding-bottom: 100px; }
+  .field-group { margin-bottom: 30px; }
+  .field-group label.main-label {
+    display: block; font-size: 13.5px; font-weight: 700; margin-bottom: 10px;
+  }
+  .field-group label.main-label .req { color: var(--ink-faint); font-weight: 600; margin-right: 4px; }
+  .field-group .hint { font-size: 12.5px; color: var(--ink-faint); margin-top: 8px; }
+
+  input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    background: #F7F7F8;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    transition: border-color .2s, background .2s;
+  }
+  input::placeholder, textarea::placeholder { color: var(--ink-faint); }
+  input:focus, select:focus, textarea:focus {
+    outline: none; border-color: var(--ink); background: #fff;
+  }
+  textarea { resize: vertical; min-height: 110px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111214' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 16px center;
+    padding-left: 40px;
+  }
+
+  .pill-group { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill { position: relative; }
+  .pill input { position: absolute; opacity: 0; pointer-events: none; }
+  .pill span {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 18px; border-radius: 30px;
+    border: 1px solid var(--line); font-size: 13.5px; font-weight: 600; color: var(--ink-soft);
+    cursor: pointer; transition: all .2s; user-select: none; touch-action: manipulation;
+  }
+  .pill input:checked + span {
+    background: var(--ink); color: #fff; border-color: var(--ink);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .pill span:hover { border-color: var(--ink); }
+  }
+
+  .submit-row { margin-top: 44px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    font-size: 14.5px; font-weight: 700; padding: 16px 28px; border-radius: var(--radius);
+    border: none; cursor: pointer; font-family: inherit;
+    transition: background .2s, color .2s, transform .2s;
+    touch-action: manipulation; user-select: none;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-whatsapp { background: #25D366; color: #fff; }
+  .btn-telegram { background: #229ED9; color: #fff; }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-2px); }
+    .btn-telegram:hover { background: #1c88ba; transform: translateY(-2px); }
+  }
+  .submit-note {
+    margin-top: 16px; font-size: 12.5px; color: var(--ink-faint); display: flex; align-items: center; gap: 8px;
+  }
+
+  .section-divider {
+    height: 1px; background: var(--line); margin: 44px 0 34px;
+  }
+
+  @media (max-width: 620px) {
+    .two-col { grid-template-columns: 1fr; }
+    .page-head { padding: 16px 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../" class="back-link"><i class="fa-solid fa-arrow-left"></i> بازگشت به پرتفولیو</a>
+</div>
+
+<div class="wrap">
+  <div class="page-head">
+    <div class="eyebrow">درخواست لوگو</div>
+    <h1>بیا لوگوت رو طراحی کنیم.</h1>
+    <p>چند تا جزئیات درباره‌ی برندت و چیزی که مدنظرته وارد کن — باهات تماس می‌گیرم و قیمت و زمان‌بندی رو می‌گم.</p>
+  </div>
+
+  <form id="logoForm">
+
+    <div class="field-group">
+      <label class="main-label" for="fullName">نام و نام‌خانوادگی <span class="req">*</span></label>
+      <input type="text" id="fullName" name="fullName" placeholder="اسمت رو بنویس" required>
+    </div>
+
+    <div class="two-col">
+      <div class="field-group">
+        <label class="main-label" for="email">ایمیل <span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" required>
+      </div>
+      <div class="field-group">
+        <label class="main-label" for="phone">تلفن / واتساپ</label>
+        <input type="tel" id="phone" name="phone" placeholder="۰۹۱۲۳۴۵۶۷۸۹">
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="field-group">
+      <label class="main-label" for="brandName">اسم برند / کسب‌وکار <span class="req">*</span></label>
+      <input type="text" id="brandName" name="brandName" placeholder="مثلاً: کافه نورث‌لاین" required>
+    </div>
+
+    <div class="field-group">
+      <label class="main-label" for="industry">حوزه‌ی فعالیت</label>
+      <input type="text" id="industry" name="industry" placeholder="مثلاً: غذا و نوشیدنی، تکنولوژی، پوشاک...">
+    </div>
+
+    <div class="field-group">
+      <label class="main-label">سبک لوگو <span class="req">(هر تعداد که می‌خوای انتخاب کن)</span></label>
+      <div class="pill-group" id="styleGroup">
+        <label class="pill"><input type="checkbox" name="style" value="مینیمال"><span>مینیمال</span></label>
+        <label class="pill"><input type="checkbox" name="style" value="مدرن"><span>مدرن</span></label>
+        <label class="pill"><input type="checkbox" name="style" value="کلاسیک / وینتیج"><span>کلاسیک / وینتیج</span></label>
+        <label class="pill"><input type="checkbox" name="style" value="بازیگوش"><span>بازیگوش</span></label>
+        <label class="pill"><input type="checkbox" name="style" value="لوکس"><span>لوکس</span></label>
+        <label class="pill"><input type="checkbox" name="style" value="جسورانه"><span>جسورانه</span></label>
+        <label class="pill"><input type="checkbox" name="style" value="دست‌نویس"><span>دست‌نویس</span></label>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="main-label" for="colors">رنگ‌های موردنظر</label>
+      <input type="text" id="colors" name="colors" placeholder="مثلاً: مشکی و طلایی، یا انتخابش با خودم">
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="two-col">
+      <div class="field-group">
+        <label class="main-label" for="budget">بودجه <span class="req">*</span></label>
+        <select id="budget" name="budget" required>
+          <option value="" disabled selected>یه بازه انتخاب کن</option>
+          <option value="زیر ۱٬۰۰۰٬۰۰۰ تومان">زیر ۱٬۰۰۰٬۰۰۰ تومان</option>
+          <option value="۱ تا ۳ میلیون تومان">۱ تا ۳ میلیون تومان</option>
+          <option value="۳ تا ۶ میلیون تومان">۳ تا ۶ میلیون تومان</option>
+          <option value="بیشتر از ۶ میلیون تومان">بیشتر از ۶ میلیون تومان</option>
+          <option value="هنوز مشخص نیست">هنوز مشخص نیست</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label class="main-label" for="timeline">زمان‌بندی</label>
+        <select id="timeline" name="timeline">
+          <option value="" disabled selected>یه بازه انتخاب کن</option>
+          <option value="هرچه زودتر">هرچه زودتر</option>
+          <option value="تا ۱ هفته">تا ۱ هفته</option>
+          <option value="۲ تا ۳ هفته">۲ تا ۳ هفته</option>
+          <option value="بیش از ۱ ماه">بیش از ۱ ماه</option>
+          <option value="زمان مشخصی ندارم">زمان مشخصی ندارم</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label class="main-label" for="refs">لینک مرجع / الهام‌بخش</label>
+      <input type="text" id="refs" name="refs" placeholder="لینک لوگو یا برندهایی که دوست داری (اختیاری)">
+    </div>
+
+    <div class="field-group">
+      <label class="main-label" for="details">توضیحات پروژه <span class="req">*</span></label>
+      <textarea id="details" name="details" placeholder="درباره‌ی برندت، مخاطبت و چیزی که تو ذهنت هست بگو..." required></textarea>
+    </div>
+
+    <div class="submit-row">
+      <button type="submit" class="btn btn-whatsapp" data-channel="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i> ارسال با واتساپ
+      </button>
+      <button type="submit" class="btn btn-telegram" data-channel="telegram">
+        <i class="fa-brands fa-telegram"></i> ارسال با تلگرام
+      </button>
+    </div>
+    <div class="submit-note"><i class="fa-solid fa-lock"></i> هیچ اطلاعاتی ذخیره نمی‌شه — فقط یه پیام آماده برات باز می‌شه که خودت بفرستیش.</div>
+
+  </form>
+</div>
+
+<script>
+  const WHATSAPP_NUMBER = '989135957196';
+  const TELEGRAM_USERNAME = 'armvnpv';
+
+  const form = document.getElementById('logoForm');
+
+  function buildMessage() {
+    const get = (id) => document.getElementById(id).value.trim();
+    const styles = Array.from(document.querySelectorAll('input[name="style"]:checked')).map(el => el.value);
+
+    const lines = [
+      'درخواست سفارش لوگوی جدید',
+      '',
+      `نام: ${get('fullName')}`,
+      `ایمیل: ${get('email')}`,
+    ];
+    if (get('phone')) lines.push(`تلفن: ${get('phone')}`);
+    lines.push('');
+    lines.push(`برند: ${get('brandName')}`);
+    if (get('industry')) lines.push(`حوزه‌ی فعالیت: ${get('industry')}`);
+    if (styles.length) lines.push(`سبک: ${styles.join('، ')}`);
+    if (get('colors')) lines.push(`رنگ‌ها: ${get('colors')}`);
+    lines.push(`بودجه: ${get('budget')}`);
+    if (get('timeline')) lines.push(`زمان‌بندی: ${get('timeline')}`);
+    if (get('refs')) lines.push(`لینک مرجع: ${get('refs')}`);
+    lines.push('');
+    lines.push(`توضیحات: ${get('details')}`);
+
+    return lines.join('\n');
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const submitter = e.submitter;
+    if (!form.reportValidity()) return;
+
+    const message = buildMessage();
+    const encoded = encodeURIComponent(message);
+    const channel = submitter ? submitter.getAttribute('data-channel') : 'whatsapp';
+
+    const url = channel === 'telegram'
+      ? `https://t.me/${TELEGRAM_USERNAME}?text=${encoded}`
+      : `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+</script>
+
+</body>
+</html>
