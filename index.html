@@ -25,7 +25,7 @@
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
   body {
     font-family: 'SN Pro', sans-serif;
@@ -158,10 +158,11 @@
     transition: opacity .3s, transform .3s;
     display: block;
     opacity: 0.5;
+    touch-action: manipulation;
   }
 
-  .side-nav a:hover {
-    opacity: 0.8;
+  @media (hover: hover) and (pointer: fine) {
+    .side-nav a:hover { opacity: 0.8; }
   }
 
   .side-nav a.active {
@@ -248,6 +249,8 @@
     border-radius: var(--radius);
     transition: background .2s, color .2s, transform .2s;
     text-align: center;
+    touch-action: manipulation;
+    user-select: none;
   }
 
   .btn-primary {
@@ -255,9 +258,10 @@
     color: #fff;
   }
 
-  .btn-primary:hover {
-    background: var(--accent);
-    transform: translateY(-2px);
+  .btn-primary:active { transform: scale(.97); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
   }
 
   .scroll-cue {
@@ -319,13 +323,14 @@
     transition: all .3s ease;
     font-family: inherit;
     white-space: nowrap;
+    touch-action: manipulation;
+    user-select: none;
   }
 
-  .filter-btn.active,
-  .filter-btn:hover {
-    background: var(--ink);
-    color: #fff;
-    border-color: var(--ink);
+  .filter-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .filter-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
   }
 
   .slider-nav {
@@ -346,13 +351,16 @@
     justify-content: center;
     transition: all 0.2s;
     font-size: 13px;
+    touch-action: manipulation;
   }
 
-  .slider-nav button:hover {
-    background: var(--ink);
-    color: #fff;
-    border-color: var(--ink);
-    transform: translateY(-2px);
+  @media (hover: hover) and (pointer: fine) {
+    .slider-nav button:hover {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
   }
 
   /* Work */
@@ -384,6 +392,7 @@
     animation: fadeUp .5s var(--ease) forwards;
     opacity: 0;
     transform: translateY(15px);
+    touch-action: manipulation;
   }
 
   @keyframes fadeUp {
@@ -401,16 +410,16 @@
     transition: transform .7s var(--ease);
   }
 
-  .work-card:hover img {
-    transform: scale(1.08);
-  }
-
   .work-card::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.12) 45%, rgba(0,0,0,0) 65%);
     transition: opacity .35s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .work-card:hover img { transform: scale(1.08); }
   }
 
   .work-info {
@@ -456,10 +465,12 @@
     transition: background .3s, color .3s, transform .3s;
   }
 
-  .work-card:hover .work-info i {
-    background: #fff;
-    color: #000;
-    transform: rotate(-40deg);
+  @media (hover: hover) and (pointer: fine) {
+    .work-card:hover .work-info i {
+      background: #fff;
+      color: #000;
+      transform: rotate(-40deg);
+    }
   }
 
   /* Resume */
@@ -541,28 +552,14 @@
     flex-wrap: wrap;
   }
 
-  .btn-whatsapp {
-    background: #25D366;
-    color: #fff;
-    border: none;
-  }
+  .btn-whatsapp { background: #25D366; color: #fff; border: none; }
+  .btn-whatsapp:active { transform: scale(.97); }
+  .btn-telegram { background: #229ED9; color: #fff; border: none; }
+  .btn-telegram:active { transform: scale(.97); }
 
-  .btn-whatsapp:hover {
-    background: #1ebe57;
-    transform: translateY(-2px);
-    color: #fff;
-  }
-
-  .btn-telegram {
-    background: #229ED9;
-    color: #fff;
-    border: none;
-  }
-
-  .btn-telegram:hover {
-    background: #1c88ba;
-    transform: translateY(-2px);
-    color: #fff;
+  @media (hover: hover) and (pointer: fine) {
+    .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-2px); color: #fff; }
+    .btn-telegram:hover { background: #1c88ba; transform: translateY(-2px); color: #fff; }
   }
 
   .info {
@@ -604,12 +601,11 @@
     color: #fff;
     font-size: 16px;
     transition: background .2s, border-color .2s;
+    touch-action: manipulation;
   }
 
-  .socials a:hover {
-    background: #fff;
-    border-color: #fff;
-    color: #000;
+  @media (hover: hover) and (pointer: fine) {
+    .socials a:hover { background: #fff; border-color: #fff; color: #000; }
   }
 
   /* Mobile */
@@ -629,8 +625,8 @@
 
     .panel {
       height: auto;
-      min-height: 100svh;
       min-height: 100vh;
+      min-height: 100svh;
       overflow: visible;
       padding: 96px 6vw 120px;
     }
@@ -698,19 +694,20 @@
     .work-card { flex: 0 0 76vw; }
 
     .contact-actions {
-      flex-wrap: nowrap;
+      flex-direction: column;
       gap: 10px;
     }
 
     .contact-actions .btn {
-      flex: 1 1 50%;
+      width: 100%;
       min-width: 0;
-      padding: 14px 12px;
-      font-size: 13px;
+      padding: 15px 14px;
+      font-size: 14px;
+      white-space: normal;
     }
 
     .contact-actions .btn i {
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .cursor-dot,
@@ -719,12 +716,9 @@
     }
   }
 
-  @media (max-width: 480px) {
-    .contact-actions .btn {
-      font-size: 12px;
-      padding: 13px 10px;
-      gap: 6px;
-    }
+  @media (max-width: 380px) {
+    #hero h1 { letter-spacing: -1px; }
+    .contact-actions .btn { font-size: 13px; padding: 14px 10px; }
   }
 </style>
 </head>
@@ -794,7 +788,7 @@
         <h3 class="col-title"><i class="fa-solid fa-briefcase"></i>Experience</h3>
 
         <div class="exp-row">
-          <img src="assets/img/Experience/Entekhab-Group.jpg" alt="Entekhab Group">
+          <img src="assets/img/Experience/Entekhab-Group.jpg" alt="Entekhab Group" loading="lazy">
           <div class="details">
             <h4>Entekhab Group</h4>
             <div class="role">Graphic Designer</div>
@@ -803,7 +797,7 @@
         </div>
 
         <div class="exp-row">
-          <img src="assets/img/Experience/Vira-Holding.jpg" alt="Vira Holding">
+          <img src="assets/img/Experience/Vira-Holding.jpg" alt="Vira Holding" loading="lazy">
           <div class="details">
             <h4>Vira Holding</h4>
             <div class="role">Graphic Designer (Part-Time)</div>
@@ -812,7 +806,7 @@
         </div>
 
         <div class="exp-row">
-          <img src="assets/img/Experience/Davin-Pack.jpg" alt="Davin Pack">
+          <img src="assets/img/Experience/Davin-Pack.jpg" alt="Davin Pack" loading="lazy">
           <div class="details">
             <h4>Davin Pack</h4>
             <div class="role">Social Media Designer</div>
@@ -821,7 +815,7 @@
         </div>
 
         <div class="exp-row">
-          <img src="assets/img//Experience/Aseman-Farda.jpg" alt="Chap Aseman Farda">
+          <img src="assets/img//Experience/Aseman-Farda.jpg" alt="Chap Aseman Farda" loading="lazy">
           <div class="details">
             <h4>Chap Aseman Farda</h4>
             <div class="role">Print Design Services</div>
@@ -834,7 +828,7 @@
         <h3 class="col-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
 
         <div class="exp-row">
-          <img src="assets/img/Education/Sepehr-University.jpg" alt="Sepehr University">
+          <img src="assets/img/Education/Sepehr-University.jpg" alt="Sepehr University" loading="lazy">
           <div class="details">
             <h4>Sepehr University</h4>
             <div class="role">BA in Graphics</div>
@@ -843,7 +837,7 @@
         </div>
 
         <div class="exp-row">
-          <img src="assets/img/Education/Mohajer-University.jpg" alt="Mohajer University">
+          <img src="assets/img/Education/Mohajer-University.jpg" alt="Mohajer University" loading="lazy">
           <div class="details">
             <h4>Mohajer University</h4>
             <div class="role">Master's in Accounting</div>
@@ -861,10 +855,10 @@
     <h2 class="reveal">Ready to collaborate? Let's connect.</h2>
 
     <div class="contact-actions reveal">
-      <a href="https://wa.me/989135957196" target="_blank" class="btn btn-whatsapp">
+      <a href="https://wa.me/989135957196" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
         <i class="fa-brands fa-whatsapp"></i> Message on WhatsApp
       </a>
-      <a href="https://t.me/armvnpv" target="_blank" class="btn btn-telegram">
+      <a href="https://t.me/armvnpv" target="_blank" rel="noopener noreferrer" class="btn btn-telegram">
         <i class="fa-brands fa-telegram"></i> Message on Telegram
       </a>
     </div>
@@ -872,17 +866,17 @@
     <div class="info reveal">
       <div><i class="fa-solid fa-location-dot"></i> Isfahan, Iran</div>
       <div><i class="fa-solid fa-phone"></i> +98 913 595 7196</div>
-      <div><i class="fa-solid fa-globe"></i> <a href="https://armvnhs.ir" target="_blank">armvnhs.ir</a></div>
+      <div><i class="fa-solid fa-globe"></i> <a href="https://armvnhs.ir" target="_blank" rel="noopener noreferrer">armvnhs.ir</a></div>
     </div>
 
     <div class="socials reveal">
-      <a href="https://www.behance.net/armvnhs" target="_blank" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-      <a href="https://dribbble.com/armvnhs" target="_blank" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
-      <a href="https://linkedin.com/in/armvnhs" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="https://instagram.com/armvnhs" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://t.me/armvnpv" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-      <a href="https://twitter.com/armvnhs" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://wa.me/989135957196" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.behance.net/armvnhs" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+      <a href="https://dribbble.com/armvnhs" target="_blank" rel="noopener noreferrer" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+      <a href="https://linkedin.com/in/armvnhs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://instagram.com/armvnhs" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://t.me/armvnpv" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://twitter.com/armvnhs" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://wa.me/989135957196" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
   </div>
 </section>
